@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Navigator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="/img/logo.jpg" alt="Tech Uddan Logo" width="10" height="10"> <!-- Increased logo size -->
+   <!--    <span>Tech Uddan</span> Optional: Add text next to the logo -->
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#roadmaps">Career Paths</a></li>
+        <li><a href="#counseling">Counseling</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Find Your Career Path<br>with Ease</h1>
+      <p>Explore career roadmaps, access free resources,<br>get one-on-one counseling with industry experts.</p>
+      <a href="#roadmaps" class="btn">Get Started</a>
+    </div>
+  </section>
+
+
+
+  <section id="roadmaps" class="section">
+    <h2>Explore Career Paths</h2>
+    <div class="roadmap-grid">
+      <!-- Existing Cards -->
+      <div class="card">
+        <h3>Learn Python</h3>
+        <p>Master Python with step-by-step guidance and free resources.</p>
+        <a href="/roadmaps/python.html" class="btn">View Roadmap</a>
+      </div>
+      <div class="card">
+        <h3>UI_UX</h3>
+        <p>Start your journey in UI_UX with our curated roadmap.</p>
+        <a href="/roadmaps/UI.html" class="btn">View Roadmap</a>
+      </div>
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>Learn how to build modern websites with HTML, CSS, and JavaScript.</p>
+        <a href="/roadmaps/web_dev.html" class="btn">View Roadmap</a>
+      </div>
+  
+
+
+      <!-- 3 Additional Cards -->
+      <div class="card">
+        <h3>Data Science</h3>
+        <p>Dive into data science with Python, R, and machine learning.</p>
+        <a href="/roadmaps/data_sci.html" class="btn">View Roadmap</a>
+      </div>
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Create stunning visuals with tools like Photoshop and Illustrator.</p>
+        <a href="/roadmaps/graphic.html" class="btn">View Roadmap</a>
+      </div>
+      <div class="card">
+        <h3>Mobile App Development</h3>
+        <p>Build mobile apps for iOS and Android using Flutter and React Native.</p>
+        <a href="roadmaps/flutter.html" class="btn">View Roadmap</a>
+      </div>
+    </div>
+  
+    <!-- Show More Button -->
+    <a href="career-paths.html" class="btn">Show More</a>
+  </section>
+
+  <section id="counseling" class="section">
+    <h2>One-on-One Counseling</h2>
+    <p>Get personalized guidance from industry experts to achieve your career goals.</p>
+
+    <div class="counselor-grid">
+        <div class="counselor-card">
+            <img src="/img/Tapan.jpg" alt="Counselor Image" class="counselor-image">
+            <h3>Tapan kumar Gadodia</h3>
+            <p class="expertise"> Angel Invester | 10+ years experience</p>
+            <a href="/Experts/Tapan Kumar.html" class="btn more-info-btn">More Info</a>
+        </div>
+
+        <div class="counselor-card">
+            <img src="img/Ravi.jpg" alt="Counselor Image" class="counselor-image">
+            <h3>Ravi Shankar </h3>
+            <p class="expertise">Principal Innovator | Scientist holding 100 plus patents . 
+            </p>
+            <a href="/Experts/Ravi Shankar.html" class="btn more-info-btn">More Info</a>
+        </div>
+
+        <div class="counselor-card">
+            <img src="/img/Deepesh.jpg" alt="Counselor Image" class="counselor-image">
+            <h3>Deepesh Sodhi</h3>
+            <p class="expertise">Founder and CEO of fluid.live</p>
+            <a href="/Experts/Deepesh Sodhi.html" class="btn more-info-btn">More Info</a>
+        </div>
+    </div>
+
+    <a href="counselors.html" class="btn">Show More Experts</a>
+
+    <style>
+        .counselor-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .more-info-btn {
+            position: absolute;
+            bottom: 60px;
+            
+            left: 25%;
+            transform: translateX(-57%)
+        }
+    </style>
+</section>
+
+
+  
+    <!-- Optional Testimonials -->
+   
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Testimonials</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+        }
+    
+        .testimonial-section {
+          text-align: center;
+          padding: 50px;
+          background-color: #ffffff;
+        }
+    
+        .testimonial-section h2 {
+          color: #2b2826;
+          margin-bottom: 20px;
+        }
+    
+        .testimonial-slider {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          max-width: 800px;
+          margin: auto;
+        }
+    
+        .testimonial-slider img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #ccc;
+          transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+          cursor: pointer;
+          opacity: 0.5;
+        }
+    
+        .testimonial-slider img.active {
+          width: 120px;
+          height: 120px;
+          border-color: #ff9800;
+          opacity: 1;
+          animation: bounce 2s infinite;
+        }
+    
+        .testimonial-slider img.hidden {
+          display: none;
+        }
+    
+        @keyframes bounce {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+        }
+    
+        .testimonial-content {
+          margin: 30px auto;
+          max-width: 700px;
+          color: #333;
+        }
+    
+        .testimonial-content p {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+    
+        .testimonial-content .stars {
+          color: #ffc107;
+          margin: 10px 0;
+        }
+    
+        .testimonial-content .author {
+          margin-top: 10px;
+          font-style: italic;
+          color: #555;
+        }
+    
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 20px;
+        }
+    
+        .navigation button {
+          background-color: #ff9800;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+    
+        .navigation button:hover {
+          background-color: #e2530c;
+        }
+
+        h2 {
+  font-size: 2rem; /* Adjust this value to your preferred size */
+}
+
+      </style>
+    </head>
+    <body>
+        <section id="testimonials">   
+      <div class="testimonial-section">
+        <h2>From Happy Students</h2>
+        <div class="testimonial-slider">
+          <img src="/img/1.jpeg" alt="User 1">
+          <img src="/img/3.jpeg" alt="User 2" class="active">
+          <img src="/img/2.png" alt="User 3">
+          <img src="img/4.jpeg" alt="User 4" class="hidden">
+          <img src="img/5.jpeg" alt="User 5" class="hidden">
+        </div>
+        <div class="testimonial-content">
+          <p>
+            “During covid, all deliveries became online..food, plants, groceries..wait..plants? Who would have thought?..well..Ugaoo did and is best at it. They make sure that we get the greenest and lushest plants so that we can love & care for them as they do. Their delivery containers are not only functional but aesthetically pleasing too. I personally am in love with their service and would totally recommend it to anyone who wants to make the first step in making their home a jungle.”
+          </p>
+          <div class="stars">★★★★★</div>
+          <div class="author">– Anirudh Nambiar</div>
+        </div>
+        <div class="navigation">
+          <button onclick="prevTestimonial()">←</button>
+          <button onclick="nextTestimonial()">→</button>
+        </div>
+      </div>
+    
+      <script>
+        let currentIndex = 1; // Start with the second image as active
+        const testimonials = [
+          {
+            text: `“During covid, all deliveries became online..food, plants, groceries..wait..plants? Who would have thought?..well..Ugaoo did and is best at it. They make sure that we get the greenest and lushest plants so that we can love & care for them as they do. Their delivery containers are not only functional but aesthetically pleasing too. I personally am in love with their service and would totally recommend it to anyone who wants to make the first step in making their home a jungle.”`,
+            author: "Anirudh Nambiar",
+            stars: "★★★★★",
+            image: "user1.jpg"
+          },
+          {
+            text: `“The plants arrived in excellent condition and have made my home so lively. The packaging is wonderful, and I love how much care goes into each delivery. Highly recommend!”`,
+            author: "Priya Sharma",
+            stars: "★★★★★",
+            image: "user2.jpg"
+          },
+          {
+            text: `“I was skeptical about ordering plants online, but Ugaoo proved me wrong! The quality of their plants and service is unmatched.”`,
+            author: "Rohan Mehta",
+            stars: "★★★★★",
+            image: "user3.jpg"
+          },
+          {
+            text: `“The customer service team was so helpful and guided me to select the perfect plants for my home. Such a delightful experience!”`,
+            author: "Simran Kapoor",
+            stars: "★★★★★",
+            image: "user4.jpg"
+          },
+          {
+            text: `“I've been a plant parent for years, but the quality of plants from Ugaoo is truly exceptional. Highly recommend their services!”`,
+            author: "Arjun Verma",
+            stars: "★★★★★",
+            image: "user5.jpg"
+          }
+        ];
+    
+        const testimonialText = document.querySelector(".testimonial-content p");
+        const testimonialAuthor = document.querySelector(".author");
+        const testimonialStars = document.querySelector(".stars");
+        const sliderImages = document.querySelectorAll(".testimonial-slider img");
+    
+        function updateTestimonial(index) {
+          testimonialText.textContent = testimonials[index].text;
+          testimonialAuthor.textContent = `– ${testimonials[index].author}`;
+          testimonialStars.textContent = testimonials[index].stars;
+    
+          sliderImages.forEach((img, i) => {
+            img.classList.toggle("active", i === index);
+            img.classList.toggle("hidden", Math.abs(i - index) > 1);
+          });
+        }
+    
+        function prevTestimonial() {
+          currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+          updateTestimonial(currentIndex);
+        }
+    
+        function nextTestimonial() {
+          currentIndex = (currentIndex + 1) % testimonials.length;
+          updateTestimonial(currentIndex);
+        }
+    
+        sliderImages.forEach((img, index) => {
+          img.addEventListener("click", () => {
+            currentIndex = index;
+            updateTestimonial(currentIndex);
+          });
+        });
+    
+        updateTestimonial(currentIndex);
+      </script>
+    </body>
+    </html>
+    
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Tech Udaan</title>
+        <style>
+            /* Global Styles */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+    
+            /* About Section */
+            .about-section {
+                padding: 30px 20px;
+            }
+    
+            .about-section h1 {
+                font-size: 36px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+    
+            .about-section p {
+                font-size: 18px;
+                color: #666;
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+    
+            /* Counselor Grid */
+            .counselor-card {
+                text-align: center;
+                margin-bottom: 20px;
+                position: relative;
+            }
+    
+            .more-info-btn {
+                display: block;
+                margin: 20px auto 0;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="about" class="about-section">
+            <h1>About Tech Udaan</h1>
+            <p>Tech Udaan is a platform dedicated to empowering entrepreneurs, tech enthusiasts, and learners to achieve their goals through mentorship, guidance, and innovation. Our team consists of industry experts who provide one-on-one mentorship and insights into career growth.</p>
+        </section>
+    
+        <section id="mission" class="about-section" style="padding-top: 10px;">
+            <h1>Our Mission</h1>
+            <p>Our mission is to create a thriving ecosystem where aspiring entrepreneurs and tech enthusiasts can connect, learn, and innovate, fostering a culture of growth and success.</p>
+        </section>
+    
+        <h1>Meet Our Team</h1>
+        <div class="counselor-grid">
+            <div class="counselor-card">
+                <img src="img/0.KSR.jpeg" alt="Counselor Image" class="counselor-image">
+                <h3>Kunal Singh</h3>
+                <p class="expertise">Co-Founder and CEO</p>
+                <a href="/about us/kunal.html" class="btn more-info-btn">More Info</a>
+            </div>
+            <div class="counselor-card">
+                <img src="img/1.Namu.jpg" class="counselor-image">
+                <h3>Namrata Sancheti</h3>
+                <p class="expertise">Founder</p>
+                <a href="/about us/namu.html" class="btn more-info-btn">More Info</a>
+            </div>
+            <div class="counselor-card">
+                <img src="/img/Rutuja.jpg" alt="Counselor Image" class="counselor-image">
+                <h3>Rutuja Mane</h3>
+                <p class="expertise">Member</p>
+                <a href="/about us/rutuja.html" class="btn more-info-btn">More Info</a>
+            </div>
+            <div class="counselor-card">
+                <img src="/img/Sanika.jpg" alt="Counselor Image" class="counselor-image">
+                <h3>Sanika Isapure</h3>
+                <p class="expertise">Member</p>
+                <a href="/about us/sanika.html" class="btn more-info-btn">More Info</a>
+            </div>
+            <div class="counselor-card">
+                <img src="/img/Dipali.jpg" alt="Counselor Image" class="counselor-image">
+                <h3>Dipali Khatave</h3>
+                <p class="expertise">Member</p>
+                <a href="/about us/dipali.html" class="btn more-info-btn">More Info</a>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+      
+      
+    
+
+    
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form action="#">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 TechUdaan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

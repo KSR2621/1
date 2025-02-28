@@ -1,0 +1,161 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+  
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ff9800;
+}
+
+/* Expert Details Section */
+#expert-details {
+    padding: 6rem 2rem 2rem; /* Adjusted padding to account for fixed navbar */
+    background-color: #fff;
+    text-align: center;
+}
+
+#expert-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.expert-image-container {
+    border: 4px solid #0277bd; /* Blue border */
+    border-radius: 50%;
+    padding: 3rem; /* Increased padding for a bigger container */
+    box-shadow: 0 0 10px #0277bd, 0 0 20px #0277bd, 0 0 30px #0277bd; /* Neon blue glow */
+    width: 100px; /* Increased width of the box */
+    height: 100px; /* Increased height of the box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expert-image {
+    border-radius: 50%;
+    width: 200px; /* Increased size of the image inside the box */
+    height: 200px; /* Increased size of the image inside the box */
+    object-fit: cover;
+}
+
+.expert-details {
+    background-color: #fff;
+    border: 2px solid #ff5722; /* Vibrant orange border */
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722, 0 0 35px #ff5722; /* Neon orange glow */
+    width: 90%; /* Adjust width to be responsive */
+    max-width: 900px; /* Set a max width for larger screens */
+    min-width: 300px; /* Ensure the box doesn't get too small */
+    text-align: left;
+    margin: 0 auto; /* Center the box */
+}
+
+.detail-box {
+    margin-bottom: 1.5rem;
+}
+
+.detail-box p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.detail-box p strong {
+    color: #ff5722; /* Vibrant orange for strong text */
+}
+
+.private-info {
+    color: #666;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.button-container a {
+    padding: 0.6rem 1.2rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container a:hover {
+    background-color: #ff5722; /* Vibrant orange on hover */
+    transform: translateY(-3px);
+}
+
+/* New Buttons (Back and Book a Slot) */
+.button-container .back-button, .button-container .book-slot-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold; 
+    margin-left: 21rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-container .back-button:hover,
+.button-container .book-slot-button:hover {
+     
+    background-color: #ff5722; /* Vibrant orange on hover */
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}  

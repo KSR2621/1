@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert Details</title>
+  <link rel="stylesheet" href="expert.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Tech Uddan</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#roadmaps">Career Paths</a></li>
+        <li><a href="#counseling">Counseling</a></li>
+        <li><a href="#resources">Free Resources</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="expert-details" class="section">
+    <h2>Expert Details</h2>
+    <div id="expert-info">
+      <!-- Expert details will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <div class="button-container">
+    <!-- New Buttons -->
+    <a href="javascript:history.back()" class="back-button">Back</a>
+    <a href="#book-slot" class="book-slot-button">Book a Slot</a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2024 Career Navigator. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBzWlkk8LgLttBhuZmFMU4WksoBMokZDc8",
+      authDomain: "tech-udaan.firebaseapp.com",
+      projectId: "tech-udaan",
+      storageBucket: "tech-udaan.appspot.com",
+      messagingSenderId: "403694571314",
+      appId: "1:403694571314:web:274300acf549146b33512b",
+      measurementId: "G-HW76PPPM67"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Fetch expert details using the ID from the query parameter
+    async function fetchExpertDetails() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const expertId = urlParams.get('id'); // Get the expert ID from the URL
+
+      if (!expertId) {
+        alert('Expert ID not found.');
+        return;
+      }
+
+      try {
+        const expertDoc = await getDoc(doc(db, 'experts', expertId));
+        if (expertDoc.exists()) {
+          const expert = expertDoc.data();
+          displayExpertDetails(expert);
+        } else {
+          alert('Expert not found.');
+        }
+      } catch (error) {
+        console.error('Error fetching expert details: ', error);
+      }
+    }
+
+    // Display expert details on the page
+    function displayExpertDetails(expert) {
+      const expertInfo = document.getElementById('expert-info');
+      expertInfo.innerHTML = ` 
+        <div class="expert-image-container">
+          <img src="${expert.profilePicture || 'https://via.placeholder.com/150'}" alt="${expert.name}" class="expert-image">
+        </div>
+        <div class="expert-details">
+          <h3>${expert.name}</h3>
+          <div class="detail-box">
+            <p><strong>Job Title:</strong> ${expert.jobTitle || 'N/A'}</p>
+            <p><strong>Company:</strong> ${expert.company || 'N/A'}</p>
+            <p><strong>Industry:</strong> ${expert.industry || 'N/A'}</p>
+            <p><strong>Years of Experience:</strong> ${expert.yearsOfExperience || 'N/A'}</p>
+          </div>
+          <div class="detail-box">
+            <p><strong>Availability:</strong> ${expert.availability || 'N/A'}</p>
+            <p><strong>Consultation Fee:</strong> ${expert.consultationFee || 'N/A'}</p>
+            <p><strong>Expertise Type:</strong> ${expert.expertiseType || 'N/A'}</p>
+          </div>
+          <div class="detail-box">
+            <p><strong>Education:</strong> ${expert.education || 'N/A'}</p>
+            <p><strong>Skills:</strong> ${expert.skills || 'N/A'}</p>
+            <p><strong>Past Work:</strong> ${expert.pastWork || 'N/A'}</p>
+            <p><strong>Motivation:</strong> ${expert.motivation || 'N/A'}</p>
+          </div>
+          <div class="button-container">
+            <a href="${expert.linkedin || '#'}" target="_blank">LinkedIn</a>
+            <a href="${expert.website || '#'}" target="_blank">Website</a>
+          </div>
+        </div>
+      `;
+    }
+
+    // Fetch expert details when the page loads
+    document.addEventListener('DOMContentLoaded', fetchExpertDetails);
+  </script>
+</body>
+</html>

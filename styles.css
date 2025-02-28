@@ -1,0 +1,616 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a, form, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between logo image and text */
+}
+
+.navbar .logo img {
+  width: 70px; /* Maintain aspect ratio */
+  height: 40px; /* Maintain aspect ratio */
+}
+
+.navbar .logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Navigation Links */
+.navbar nav {
+  margin-right: 3rem; /* Move the navigation links to the left */
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+}
+
+.navbar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+  color: #ff9800;
+}
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  padding: 0 2rem;
+  background: url('https://www.simplilearn.com/ice9/free_resources_article_thumb/top-7-steps-to-decide-the-right-career-path-ccr9-article.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 50%; /* Adjust width as needed */
+  margin-left: 5%; /* Move content to the left */
+  text-align: left; /* Align text to the left */
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hero .btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #ff9800;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sections */
+.section {
+  padding: 3rem 2rem;
+  background-color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.roadmap-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #ffeb3b;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722, 0 0 35px #ff5722;
+  border: 2px solid #ff5722;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.card .btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #000;
+}
+
+/* Show More Button */
+#roadmaps .btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#roadmaps .btn:hover {
+  background-color: #ff9800;
+}
+/* One-on-One Counseling Section */
+#counseling {
+  background-color: #ffffff;
+  padding: 3rem 2rem; /* Reduced padding for less height */
+  text-align: center;
+}
+
+#counseling h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#counseling p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Counselor Grid */
+.counselor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Counselor Cards */
+.counselor-card {
+  background-color: #ffeb3b;
+  padding: 1.5rem; /* Reduced padding for less height */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 300px; /* Reduced height for the card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.counselor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722, 0 0 35px #ff5722;
+  border: 2px solid #ff5722;
+}
+
+.counselor-image {
+  border-radius: 50%;
+  margin-bottom: 1rem; /* Reduced margin for better spacing */
+  width: 100px; /* Reduced image size */
+  height: 100px; /* Reduced image size */
+  object-fit: cover;
+  border: 3px solid #0277bd;
+  transition: transform 0.3s ease;
+}
+
+.counselor-card:hover .counselor-image {
+  transform: scale(1.1);
+}
+
+.counselor-card h3 {
+  font-size: 1.4rem; /* Reduced heading size */
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.counselor-card .expertise {
+  font-size: 0.9rem; /* Reduced text size */
+  color: #666;
+  margin-bottom: 1rem; /* Reduced margin for better spacing */
+}
+
+.counselor-card .more-info-btn {
+  padding: 0.6rem 1.2rem; /* Reduced button size */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 1rem; /* Adjusted button position */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.counselor-card .more-info-btn:hover {
+  background-color: #ff5722;
+}
+
+/* Show More Button */
+#counseling .btn {
+  padding: 0.8rem 2rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#counseling .btn:hover {
+  background-color: #ff5722;
+}
+
+/* Meet Our Team Section */
+#about {
+  background-color: #ffffff;
+  padding: 3rem 2rem; /* Reduced padding for less height */
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Counselor Grid for Meet Our Team */
+.counselor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Counselor Cards for Meet Our Team */
+.counselor-card {
+  background-color: #ffeb3b;
+  padding: 1.5rem; /* Reduced padding for less height */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 260px; /* Reduced height for the card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.counselor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722, 0 0 35px #ff5722;
+  border: 2px solid #ff5722;
+}
+
+.counselor-image {
+  border-radius: 50%;
+  margin-bottom: 1rem; /* Reduced margin for better spacing */
+  width: 100px; /* Reduced image size */
+  height: 100px; /* Reduced image size */
+  object-fit: cover;
+  border: 3px solid #0277bd;
+  transition: transform 0.3s ease;
+}
+
+.counselor-card:hover .counselor-image {
+  transform: scale(1.1);
+}
+
+.counselor-card h3 {
+  font-size: 1.4rem; /* Reduced heading size */
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.counselor-card .expertise {
+  font-size: 0.9rem; /* Reduced text size */
+  color: #666;
+  margin-bottom: 1rem; /* Reduced margin for better spacing */
+}
+
+.counselor-card .more-info-btn {
+  padding: 0.6rem 1.2rem; /* Reduced button size */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 1rem; /* Adjusted button position */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.counselor-card .more-info-btn:hover {
+  background-color: #ff5722;
+}
+
+/* Show More Button */
+#counseling .btn {
+  padding: 0.8rem 2rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#counseling .btn:hover {
+  background-color: #ff5722;
+}
+
+/* Meet Our Team Section */
+#about {
+  background-color: #ffffff;
+  padding: 4rem 2rem; /* Increased padding for more height */
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Counselor Grid for Meet Our Team */
+.counselor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Counselor Cards for Meet Our Team */
+.counselor-card {
+  background-color: #ffeb3b;
+  padding: 2rem; /* Increased padding for more height */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 350px; /* Increased height for the card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.counselor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722, 0 0 35px #ff5722;
+  border: 2px solid #ff5722;
+}
+
+.counselor-image {
+  border-radius: 50%;
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
+  width: 120px; /* Increased image size */
+  height: 120px; /* Increased image size */
+  object-fit: cover;
+  border: 3px solid #0277bd;
+  transition: transform 0.3s ease;
+}
+
+.counselor-card:hover .counselor-image {
+  transform: scale(1.1);
+}
+
+.counselor-card h3 {
+  font-size: 1.6rem; /* Increased heading size */
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.counselor-card .expertise {
+  font-size: 1rem; /* Increased text size */
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.counselor-card .more-info-btn {
+  padding: 0.8rem 1.5rem; /* Increased button size */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.counselor-card .more-info-btn:hover {
+  background-color: #ff5722;
+}
+/* Free Resources */
+#resources {
+  background-color: #dcedc8;
+}
+
+#resources a.btn {
+  background-color: #558b2f;
+  color: #fff;
+}
+
+#resources a.btn:hover {
+  background-color: #33691e;
+}
+
+/* Testimonials */
+.testimonial {
+  background-color: #f1f1f1;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #555;
+}
+
+/* Contact Us */
+#contact {
+  background-color: #fff3e0;
+  padding: 3rem 2rem;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #000;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+

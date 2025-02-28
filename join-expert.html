@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join as an Expert</title>
+  <link rel="stylesheet" href="join-expert.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Tech Uddan</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="join-expert.html">Join as an Expert</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="join-expert" class="section">
+    <h2>Join as an Expert</h2>
+    <form id="expert-form">
+      <!-- Basic Information -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="job-title">Job Title/Position:</label>
+      <input type="text" id="job-title" name="job-title" required>
+
+      <label for="company">Company Name (or Freelance):</label>
+      <input type="text" id="company" name="company" required>
+
+      <label for="industry">Industry/Field of Expertise:</label>
+      <input type="text" id="industry" name="industry" required>
+
+      <label for="years-of-experience">Years of Experience:</label>
+      <input type="number" id="years-of-experience" name="years-of-experience">
+
+      <!-- Contact Information -->
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number (optional):</label>
+      <input type="tel" id="phone" name="phone">
+
+      <!-- Professional Online Presence -->
+      <label for="linkedin">LinkedIn Profile URL:</label>
+      <input type="url" id="linkedin" name="linkedin" required>
+
+      <label for="website">Personal Website/Portfolio (optional):</label>
+      <input type="url" id="website" name="website">
+
+      <label for="social-media">Other Social Media Links (optional):</label>
+      <input type="text" id="social-media" name="social-media">
+
+      <!-- Availability and Preferences -->
+      <label for="availability">Preferred Availability:</label>
+      <textarea id="availability" name="availability" rows="3" placeholder="e.g., Time zone, best times for contact"></textarea>
+
+      <label for="consultation-fee">Consultation Fee (if applicable):</label>
+      <input type="text" id="consultation-fee" name="consultation-fee" placeholder="e.g., Free, $50/hour">
+
+      <label for="expertise-type">Type of Expertise Available For:</label>
+      <textarea id="expertise-type" name="expertise-type" rows="3" placeholder="e.g., Mentorship, advice, internships, project reviews"></textarea>
+
+      <!-- Professional Background -->
+      <label for="education">Education/Certifications:</label>
+      <textarea id="education" name="education" rows="3" placeholder="e.g., Bachelor's in Computer Science, AWS Certified"></textarea>
+
+      <label for="skills">Professional Skills:</label>
+      <textarea id="skills" name="skills" rows="3" placeholder="e.g., Python, Data Analysis, Digital Marketing"></textarea>
+
+      <label for="past-work">Past Work Experience/Notable Projects (optional):</label>
+      <textarea id="past-work" name="past-work" rows="4" placeholder="e.g., Led a team of 10 developers for a fintech project"></textarea>
+
+      <!-- Consent and Terms -->
+      <label>
+        <input type="checkbox" id="consent" name="consent" required>
+        I consent to share my profile on the platform.
+      </label>
+
+      <label>
+        <input type="checkbox" id="terms" name="terms" required>
+        I agree to the <a href="terms.html" target="_blank">Terms and Conditions</a>.
+      </label>
+
+      <!-- Profile Picture URL -->
+      <label for="profile-picture-url">Profile Picture URL (optional):</label>
+      <input type="url" id="profile-picture-url" name="profile-picture-url" placeholder="Enter image URL">
+
+      <!-- Additional Questions -->
+      <label for="motivation">What motivates you to help students?</label>
+      <textarea id="motivation" name="motivation" rows="4" required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Tech Uddan. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBzWlkk8LgLttBhuZmFMU4WksoBMokZDc8",
+      authDomain: "tech-udaan.firebaseapp.com",
+      projectId: "tech-udaan",
+      storageBucket: "tech-udaan.appspot.com",
+      messagingSenderId: "403694571314",
+      appId: "1:403694571314:web:274300acf549146b33512b",
+      measurementId: "G-HW76PPPM67"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Save expert data to Firestore
+    document.getElementById('expert-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const expert = {
+        name: document.getElementById('name').value,
+        jobTitle: document.getElementById('job-title').value,
+        company: document.getElementById('company').value,
+        industry: document.getElementById('industry').value,
+        yearsOfExperience: document.getElementById('years-of-experience').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        linkedin: document.getElementById('linkedin').value,
+        website: document.getElementById('website').value,
+        socialMedia: document.getElementById('social-media').value,
+        availability: document.getElementById('availability').value,
+        consultationFee: document.getElementById('consultation-fee').value,
+        expertiseType: document.getElementById('expertise-type').value,
+        education: document.getElementById('education').value,
+        skills: document.getElementById('skills').value,
+        pastWork: document.getElementById('past-work').value,
+        consent: document.getElementById('consent').checked,
+        terms: document.getElementById('terms').checked,
+        motivation: document.getElementById('motivation').value,
+        profilePicture: document.getElementById('profile-picture-url').value, // Updated to URL
+        confirmed: false // Default to false
+      };
+
+      try {
+        await addDoc(collection(db, 'experts'), expert);
+        alert('Thank you for joining! Your profile will be reviewed and confirmed shortly.');
+        window.location.href = 'index.html'; // Redirect to home page
+      } catch (error) {
+        console.error('Error adding expert: ', error);
+      }
+    });
+  </script>
+</body>
+</html>

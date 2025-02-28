@@ -1,0 +1,39 @@
+/* Admin Panel Styles */
+#admin .counselor-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    margin: 1rem;
+  }
+  
+  #admin .btn {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  #admin .confirm-btn {
+    background-color: #4CAF50; /* Green for Confirm */
+  }
+  
+  #admin .remove-btn {
+    background-color: #f44336; /* Red for Remove */
+  }
+  
+  #admin .btn:hover {
+    opacity: 0.8;
+  }
+  
+  #admin .status {
+    font-weight: bold;
+    color: #333;
+    margin: 0.5rem 0;
+  }
