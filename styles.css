@@ -614,3 +614,104 @@ button:hover {
 }
 
 
+
+
+
+
+
+
+
+
+/* Meet Our Team Section */
+#about {
+  background-color: #ffffff;
+  padding: 4rem 2rem; /* Increased padding for more height */
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Counselor Grid for Meet Our Team */
+.counselor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Counselor Cards for Meet Our Team */
+.counselor-card {
+  background-color: #ffeb3b;
+  padding: 2rem; /* Increased padding for more height */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px; /* Fixed width for each card */
+  height: 350px; /* Increased height for the card */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.counselor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722, 0 0 35px #ff5722;
+  border: 2px solid #ff5722;
+}
+
+.counselor-image {
+  border-radius: 50%;
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
+  width: 120px; /* Increased image size */
+  height: 120px; /* Increased image size */
+  object-fit: cover;
+  border: 3px solid #0277bd;
+  transition: transform 0.3s ease;
+}
+
+.counselor-card:hover .counselor-image {
+  transform: scale(1.1);
+}
+
+.counselor-card h3 {
+  font-size: 1.6rem; /* Increased heading size */
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.counselor-card .expertise {
+  font-size: 1rem; /* Increased text size */
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.counselor-card .more-info-btn {
+  padding: 0.8rem 1.5rem; /* Increased button size */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.counselor-card .more-info-btn:hover {
+  background-color: #ff5722;
+}
